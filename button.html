@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style>
+a:link, a:visited {
+  
+
+   color: white;
+  padding: 14px 25px;
+  
+  text-decoration: none;
+  display: block;
+}
+.wrapper {
+background-color: #f44336;
+text-align: center;
+}
+a:hover, a:active {
+  background-color: red;
+display: block;
+}
+</style>
+</head>
+<body>
+
+ 
+
+<div class="wrapper"> 
+<p id="search"></p>
+</div>
+
+
+<script>
+lan = ["Google",  "Wikipedia", "Youtube"];
+linkks = ["https://google.com/", "https://www.wikipedia.org/","https://www.youtube.com/"];
+
+ 
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function demo() {
+
+let t=lan[0];
+let l=linkks[0];
+let result=t.link(l);
+document.getElementById("search").innerHTML = result;
+
+await sleep(2000);
+
+let t1=lan[1];
+let l1=linkks[1];
+let result1=t1.link(l1);
+document.getElementById("search").innerHTML = result1;
+
+await sleep(2000);
+
+let t2=lan[2];
+let l2=linkks[2];
+let result2=t2.link(l2);
+document.getElementById("search").innerHTML = result2; 
+
+}
+ 
+demo();
+
+function everyTime() {
+    demo();
+}
+
+var intervalId = setInterval(everyTime, 6000);
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
